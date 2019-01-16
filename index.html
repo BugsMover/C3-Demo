@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{
+				background: #444444;
+			}
+			#box{
+				width: 1000px;
+				/*边距:上下150px 左右自动居中*/
+				height: 300px;
+				margin: 150px auto;
+			}
+			.minBox{
+				width:300;
+				height: 100%;
+				float: left;/*浮动：左浮动*/
+				margin: 50PX;
+			}
+			.minBox span{
+				display: block;/*转换块级元素*/
+				width:100%;
+				height: 250px;
+				text-align: center;/*文本左右居中*/
+				
+			}
+			.minBox span img {
+				margin-top: 50px;
+				/*过渡动画：全部过渡 执行时间*/
+				transition:all 1s;
+			}
+			.minBox a{
+				display: block;
+				width: 170px;
+				height: 30px;
+				color: 	#2CB26B;
+				border: 2px solid white;
+				margin: 0 auto;
+			    font-size:20px;
+			    font-weight: 900;
+			    text-decoration: none;  /*相处a标签默认样式*/
+			   padding-left: 20px;
+			   line-height: 30px;/*行高：属性值给自身高度值一致 文本垂直居中*/
+			  background: url(img/allow.png) no-repeat 130px center;/*背景:背景*/
+			 transition:all 1s;
+			 position: relative;/*相对定位：根据自身位置进行定位，原有位置保留*/
+			}
+			.minBox span:hover img{
+				transform: rotate(360deg)  ;
+				/*transform: scale(1.5); 属性覆盖错误*/
+			}
+			.minBox a:hover{
+				background-position-x: 150px;
+			}
+			.minBox a p {
+				/*绝对定位：根据相邻定位的父元素位置进行绝对定位
+				 如若父元素没有定位，就根据body进行定位*/
+				position: absolute;
+				background: white;
+				transition: all 1s;
+			}
+			.minBox a .p1{
+				width: 0;
+				height: 2px;
+				top:-2px;
+				left: -100%;
+			}
+			.minBox a:hover .p1{
+				left: 0;
+				width: 100%;
+			}
+			.minBox a .p2{
+				width:0;
+				height: 2px;
+				bottom: -2px;
+				right:-100%;
+			}
+			.minBox a:hover .p2{
+				right: 0;
+				width: 100%;
+			}
+			.minBox a .p3{
+				width: 2px;
+				height: 0;
+				bottom: -100%;
+				left: -2px;
+			}
+			.minBox a:hover .p3{
+				bottom: 0;
+				height: 100%;
+			}
+			.minBox a .p4{
+				width: 2px;
+				height: 0;
+				top: -100%;
+				right: -2px;
+			}
+			.minBox a:hover .p4{
+				top: 0;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+        	作者：offline
+        	时间：2019-01-07
+        	描述：行内样式表
+        -->
+		<div id="box" style="">
+			<div class="minBox">
+				<span>
+					<img src="img/mission.png" />
+				</span>
+				<a href="#">
+					MISSION
+					<p class="p1"></p>
+					<p class="p2"></p>
+					<p class="p3"></p>
+					<p class="p4"></p>
+					
+				</a>
+			</div>
+			<div class="minBox">
+				<span>
+					<img src="img/play.png" />
+				</span>
+				<a href="#">
+					PLAY
+					<p class="p1"></p>
+					<p class="p2"></p>
+					<p class="p3"></p>
+					<p class="p4"></p>
+				</a>
+			</div>
+			<div class="minBox">
+				<span>
+					<img src="img/touch.png" />
+				</span>
+				<a href="#">
+					TOUCH
+					<p class="p1"></p>
+					<p class="p2"></p>
+					<p class="p3"></p>
+					<p class="p4"></p>
+				</a>
+				
+			</div>
+		</div>
+	</body>
+</html>
